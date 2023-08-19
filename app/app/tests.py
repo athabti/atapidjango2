@@ -7,6 +7,8 @@ from app import calc
 
 
 class CalcTests(SimpleTestCase):
+    
+    
     """Test the calc module."""
 
     def test_add_numbers(self):
@@ -21,5 +23,5 @@ class CalcTests(SimpleTestCase):
 
         self.assertEqual(res, 5)
 '''
-test git action
+test git action après passage a lint
 '''
