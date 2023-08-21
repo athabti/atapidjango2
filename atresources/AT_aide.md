@@ -33,7 +33,13 @@ $ eval "$(ssh-agent -s)"
  git checkout -b iss53
  git push -u origin demo1_testing
 
+---------------------------------
+pour la mise à jour de ll'apli
 
+docker-compose build
+
+docker-compose run --rm app sh -c "python manage.py wait_for_db python manage.py 
+test  &&flake8"
 ---------------------------------
 
  docker restart my_container
@@ -57,6 +63,8 @@ docker login -u athabti -p dckr_pat_A3UO7w8lg7bW-W1OkBdQHkdWOZs
 
 --------------------------------
 
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py test && flake8"
+_________________________________
 docker-compose -f docker-compose-deploy.yml down
 //   -------------------OK----------------
 docker-compose -f docker-compose-deploy.yml down
@@ -78,7 +86,7 @@ docker-compose down --volume
  après git pull
  docker-compose -f docker-compose-deploy.yml build app
   docker-compose -f docker-compose-deploy.yml up --no-deps -d app ( reconstruit l'appli sans les composant dependant exemple DB server)
-
+----------------------------------
 pour la mise à jour de ll'apli
 docker-compose build
 docker-compose run --rm app sh -c "python manage.py wait_for_db python manage.py test  &&flake8"
